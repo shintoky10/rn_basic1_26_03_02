@@ -1,3 +1,4 @@
+import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 // - div = View
 // - `View` : 전체를 감싸는 컨테이너
@@ -14,18 +15,11 @@ export default function Index() {
       }}
     >
       <Text style={styles.mainText}>Hello World!</Text>
-      <Text style={
-        {
-          fontSize: 20,
-          fontWeight: "bold",
-          color: "blue",
-          borderWidth: 1,
-          borderColor: "blue",
-          padding: 10,
-          margin: 10,
-          borderRadius: 10,
-        }
-      }>Hello World!</Text>
+      {/* StatusBar 컴포넌트는 화면 전체를 덮는 컨테이너에만 사용해야 합니다. */}
+      {/* hidden: 상태바를 숨김 */}
+      {/* style: 상태바의 텍스트 색상을 변경 */} 
+      {/* dark: 어두운 테마, light: 밝은 테마 */}
+      <StatusBar hidden={false} style="dark" />
     </View>
   );
 }
